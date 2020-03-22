@@ -36,18 +36,20 @@
             android:elevation="2dp"
             app:iconifiedByDefault="false"
             app:layout_constraintBottom_toBottomOf="@+id/image_backdrop"
-            app:layout_constraintEnd_toStartOf="@id/button_search"
+            app:layout_constraintEnd_toStartOf="@id/divider"
             app:layout_constraintStart_toStartOf="parent"
             app:queryHint="@string/hint_search_recipe"
             app:searchIcon="@null" />
 
         <View
+            android:id="@+id/divider"
             android:layout_width="1dp"
             android:layout_height="0dp"
-            android:background="@color/cardview_light_background"
+            android:background="@color/colorDivider"
             android:elevation="3dp"
             app:layout_constraintBottom_toBottomOf="@id/search_recipe"
-            app:layout_constraintEnd_toEndOf="@id/search_recipe"
+            app:layout_constraintEnd_toStartOf="@id/button_search"
+            app:layout_constraintStart_toEndOf="@id/search_recipe"
             app:layout_constraintTop_toTopOf="@id/search_recipe" />
 
         <ImageButton
@@ -58,11 +60,11 @@
             android:background="@color/colorWhite"
             android:elevation="2dp"
             android:src="@drawable/ic_search_black_24dp"
-            app:layout_constraintBottom_toBottomOf="@id/search_recipe"
+            app:layout_constraintBottom_toBottomOf="@id/divider"
             app:layout_constraintDimensionRatio="3:2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/search_recipe"
-            app:layout_constraintTop_toTopOf="@id/search_recipe" />
+            app:layout_constraintStart_toEndOf="@+id/divider"
+            app:layout_constraintTop_toTopOf="@id/divider" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
