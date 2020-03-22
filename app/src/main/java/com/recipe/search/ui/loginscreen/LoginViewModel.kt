@@ -1,4 +1,4 @@
-package com.recipe.search.ui
+package com.recipe.search.ui.loginscreen
 
 import android.app.Application
 import com.recipe.search.common.BaseViewModel

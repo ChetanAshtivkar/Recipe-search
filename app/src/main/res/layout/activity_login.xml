@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.recipe.search.ui.LoginViewModel" />
+            type="com.recipe.search.ui.loginscreen.LoginViewModel" />
 
     </data>
 

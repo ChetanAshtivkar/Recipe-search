@@ -1,4 +1,4 @@
-package com.recipe.search.ui
+package com.recipe.search.ui.loginscreen
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.recipe.search.MainActivity
+import com.recipe.search.ui.mainscreen.MainActivity
 import com.recipe.search.R
 import com.recipe.search.common.BaseActivity
 import com.recipe.search.common.Navigator
