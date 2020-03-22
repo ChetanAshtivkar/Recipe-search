@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.recipe.search.R
+import com.recipe.search.common.BUNDLE_SEARCH
+import com.recipe.search.data.RecipeRepo
 import com.recipe.search.databinding.ActivitySearchResultBinding
 
 class SearchResultActivity : AppCompatActivity() {
@@ -17,9 +19,13 @@ class SearchResultActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(
             this,
-            SearchViewModelFactory(application)
+            SearchViewModelFactory(
+                application,
+                RecipeRepo()
+            )
         ).get(SearchViewModel::class.java)
 
+        viewModel.setSearchText(intent.extras?.getString(BUNDLE_SEARCH))
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
