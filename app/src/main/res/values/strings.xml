@@ -7,4 +7,5 @@
     <string name="error_login">Could not log you in with Google! Please try again.</string>
     <string name="hint_search_recipe">Search recipe</string>
     <string name="alert_no_search_text">Write something to search.</string>
+    <string name="title_search_result">Search Results</string>
 </resources>

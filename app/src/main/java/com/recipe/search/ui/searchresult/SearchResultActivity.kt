@@ -38,6 +38,8 @@ class SearchResultActivity : BaseActivity() {
                 RecipeRepo(recipeDao)
             )
         ).get(SearchViewModel::class.java)
+        setSupportActionBar(binding.toolbar)
+        supportActionBar!!.setTitle(getString(R.string.title_search_result))
 
         setupRecyclerViewAdapter()
         viewModel.setSearchText(intent.extras?.getString(BUNDLE_SEARCH))
@@ -52,5 +54,15 @@ class SearchResultActivity : BaseActivity() {
         })
 
         binding.resultList.adapter = adapter
+
+//        val swipeHandler = object : SwipeToDeleteCallback(this) {
+//            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+//                val adapter = binding.resultList.adapter as RecipeAdapter
+//                adapter.currentList.removeAt(viewHolder.adapterPosition)
+//            }
+//
+//        }
+//        val itemTouchHelper = ItemTouchHelper(swipeHandler)
+//        itemTouchHelper.attachToRecyclerView(binding.resultList)
     }
 }
