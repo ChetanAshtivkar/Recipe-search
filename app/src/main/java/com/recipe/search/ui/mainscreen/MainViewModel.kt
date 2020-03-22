@@ -1,6 +1,7 @@
 package com.recipe.search.ui.mainscreen
 
 import android.app.Application
+import androidx.databinding.ObservableField
 import com.recipe.search.common.BaseViewModel
 
 /**

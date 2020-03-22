@@ -10,7 +10,8 @@ import androidx.databinding.BindingAdapter
 @BindingAdapter("app:set_picture")
 fun setPicture(imageView: ImageView, imageUrl: String) {
     GlideApp.with(imageView.context)
-//        .asBitmap()
         .load(imageUrl)
+        .fitCenter()
+        .centerCrop()
         .into(imageView)
 }

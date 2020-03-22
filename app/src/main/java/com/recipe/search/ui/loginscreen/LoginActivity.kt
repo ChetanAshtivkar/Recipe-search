@@ -10,12 +10,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.recipe.search.ui.mainscreen.MainActivity
 import com.recipe.search.R
 import com.recipe.search.common.BaseActivity
 import com.recipe.search.common.Navigator
 import com.recipe.search.common.RC_SIGN_IN
 import com.recipe.search.databinding.ActivityLoginBinding
+import com.recipe.search.ui.mainscreen.MainActivity
 
 /**
  * Created by Chetan on 22/03/20.
@@ -40,6 +40,8 @@ class LoginActivity : BaseActivity() {
         ).get(LoginViewModel::class.java)
 
         binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
         if (GoogleSignIn.getLastSignedInAccount(this) != null) {
             goToMainActivity()
         } else {
