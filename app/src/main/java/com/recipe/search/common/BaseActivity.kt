@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 /**
  * Created by Chetan on 22/03/20.
  */
-private const val ACTIVITY_NAVIGATION_TIME_OUT: Long = 100
 
 abstract class BaseActivity : AppCompatActivity() {
 

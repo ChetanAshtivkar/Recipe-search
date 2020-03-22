@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Recipe Search</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="error_login">Could not log you in with Google! Please try again.</string>
 </resources>
