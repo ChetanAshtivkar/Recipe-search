@@ -1,18 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.mainscreen.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <variable
+            name="viewModel"
+            type="com.recipe.search.ui.mainscreen.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mainscreen.MainActivity">
+
+        <ImageView
+            android:id="@+id/image_backdrop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foreground="@drawable/image_overlay"
+            app:layout_constraintDimensionRatio="5:3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:set_picture="@{`https://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/9/22/0/FNK_Shortcut-Chicken-Enchiladas_s4x3.jpg.rend.hgtvcom.616.462.jpeg`}" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_recipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_double"
+            android:layout_marginBottom="@dimen/margin_double"
+            android:background="@color/colorWhite"
+            android:elevation="2dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="@+id/image_backdrop"
+            app:layout_constraintEnd_toStartOf="@id/button_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:queryHint="@string/hint_search_recipe"
+            app:searchIcon="@null" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/cardview_light_background"
+            android:elevation="3dp"
+            app:layout_constraintBottom_toBottomOf="@id/search_recipe"
+            app:layout_constraintEnd_toEndOf="@id/search_recipe"
+            app:layout_constraintTop_toTopOf="@id/search_recipe" />
+
+        <ImageButton
+            android:id="@+id/button_search"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="@dimen/margin_double"
+            android:background="@color/colorWhite"
+            android:elevation="2dp"
+            android:src="@drawable/ic_search_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/search_recipe"
+            app:layout_constraintDimensionRatio="3:2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_recipe"
+            app:layout_constraintTop_toTopOf="@id/search_recipe" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
